@@ -4,12 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var mongoose = require('mongoose');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var fund = require('./routes/fund');
 var app = express();
-
+mongoose.connect('mongodb://alistair:cokelife@ds121965.mlab.com:21965/fund');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
-var db = mongojs('mongodb://alistair:cokelife@ds121965.mlab.com:21965/fund')
-
+var db = mongojs('mongodb://alistair:cokelife@ds121965.mlab.com:21965/fund');
+var Fund = require('../models/fund');
 /* GET home page. */
 router.get('/new', function(req, res, next) {
   res.render('new', {});
@@ -18,7 +18,7 @@ router.get('/:id', function(req, res, next) {
 });
 
 
-//router.post('/fund', function(req, res, next){
+// router.post('/fund', function(req, res, next){
 //  var fund = req.body;
 //  if(!fund.title){
 //    res.status(400);
@@ -35,6 +35,11 @@ router.get('/:id', function(req, res, next) {
 //   }
 // });
 
+router.post('/new', function(req, res) {
+	Fund.create(req.body).then(function(fund){
+		res.send(fund);
+	})
+});
 
 
 module.exports = router;
