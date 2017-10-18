@@ -28,3 +28,20 @@ describe('/fund/:id', function() {
       })
 	})
 })
+
+describe('/fund/new', function() {
+	it('creates a new fund', function(done) {
+    chai.request(app)
+      .post('/fund/new')
+      .send({
+        title: 'new fund',
+        goal: 100
+      })
+      .end(function(err, res){
+        expect(res).to.have.status(200);
+        expect(res.body).to.have.property('title');
+        expect(res.body.title).to.have.property('new fund');
+        done();
+      })
+	})
+})

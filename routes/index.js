@@ -13,31 +13,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/:id', function(req, res, next) {
-  db.funds.findOne({_id: mongojs.ObjectId(req.params.id)}, function(err, fund){
-    if(err){
-      res.send(err);
-    }
-    res.json(fund);
-  });
-});
 
-router.post('/fund', function(req, res, next){
-  var fund = req.body;
-  if(!fund.title){
-    res.status(400);
-    res.json({
-      "error": "bad data"
-    });
-  } else {
-    db.funds.save(fund, function(err, task){
-      if(err){
-        res.send(err);
-      }
-      res.json(fund);
-    });
-  }
-});
 
 
 
