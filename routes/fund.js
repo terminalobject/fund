@@ -17,28 +17,10 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
-
-// router.post('/fund', function(req, res, next){
-//  var fund = req.body;
-//  if(!fund.title){
-//    res.status(400);
-//    res.json({
-//      "error": "bad data"
-//    });
-//   } else {
-//     db.funds.save(fund, function(err, task){
-//       if(err){
-//         res.send(err);
-//       }
-//       res.json(fund);
-//     });
-//   }
-// });
-
-router.post('/new', function(req, res) {
+router.post('/new', function(req, res, next) {
 	Fund.create(req.body).then(function(fund){
 		res.send(fund);
-	})
+	}).catch(next)
 });
 
 
