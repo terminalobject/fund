@@ -11,7 +11,7 @@ var FundSchema = new Schema({
 		type: Number,
 		required: [true, 'Goal amount is required']
 	},
-	amount: {
+	raised: {
 		type: Number,
 		default: 0
 	}
