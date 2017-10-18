@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var FundSchema = new Schema({
-	name: {
+	title: {
 		type: String,
 		required: [true, 'Name field is required']
 	},
