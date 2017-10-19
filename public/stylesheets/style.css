@@ -21,6 +21,19 @@ body {
       background-color: #2f2f2f; /* Black Gray */
       color: #fff;
   }
+  .bg-5 {
+      font: 20px Montserrat, Optima;
+      background-color: #FAF0E6; /* Black Gray */
+      color: #696969;
+  }
+  .roundformborder {
+    font: 15px PT Sans, sans-serif;
+    font-weight: light;
+    background-color: #ffffff; /* Black Gray */
+    color: #696969;
+    border: 2px solid #696969;
+    border-radius: 5px;
+  }
   .container-fluid {
       padding-top: 70px;
       padding-bottom: 70px;
@@ -36,4 +49,8 @@ body {
   }
   .navbar-nav  li a:hover {
       color: #1abc9c !important;
+  }
+  .footerflush {
+    position: relative;
+    margin-top: -150px
   }

@@ -7,6 +7,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
   <link rel="stylesheet" href="/stylesheets/style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans">
 </head>
 <body>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -33,10 +34,14 @@
       </div>
     </div>
   </nav>
-
-<%- body %>
+  <!-- Body -->
+  <div class="container-fluid bg-5 text-left">
+    <div class="row">
+      <%- body %>
+    </div>
+  </div>
   <!-- Footer -->
-  <footer class="container-fluid bg-4 text-center">
+  <footer class="container-fluid bg-4 text-center navbar-fixed-bottom">
   </footer>
 </body>
 </html>
