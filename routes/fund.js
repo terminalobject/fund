@@ -5,7 +5,7 @@ var db = mongojs('mongodb://alistair:cokelife@ds121965.mlab.com:21965/fund');
 var Fund = require('../models/fund');
 /* GET home page. */
 router.get('/new', function(req, res, next) {
-  res.render('new', {});
+  res.layout('new', {});
 });
 
 router.get('/:id', function(req, res, next) {
@@ -13,7 +13,7 @@ router.get('/:id', function(req, res, next) {
     if(err){
       res.send(err);
     }
-    res.render('fund', { title: fund.title, goal: fund.goal, raised: fund.raised });
+    res.layout('fund', { title: fund.title, goal: fund.goal, raised: fund.raised });
   });
 });
 
