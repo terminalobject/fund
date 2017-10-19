@@ -46,3 +46,27 @@ describe('/fund/new', function() {
       })
 	})
 })
+
+describe('/users/register', function() {
+  it('register page', function(done) {
+    chai.request(app)
+      .get('/users/register')
+      .end(function(err,res) {
+        expect(err).to.be.null;
+        expect(res).to.have.status(200);
+        done();
+      })
+  });
+});
+
+describe('/users/login', function() {
+  it('register page', function(done) {
+    chai.request(app)
+      .get('/users/register')
+      .end(function(err,res) {
+        expect(err).to.be.null;
+        expect(res).to.have.status(200);
+        done();
+      })
+  });
+});
