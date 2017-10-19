@@ -52,5 +52,6 @@ body {
   }
   .footerflush {
     position: relative;
-    margin-top: -150px
+    margin-top: -150px;
+    clear: both;
   }
