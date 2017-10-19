@@ -39,8 +39,9 @@ describe('/fund/new', function() {
       })
       .end(function(err, res){
         expect(res).to.have.status(200);
-        expect(res.body).to.have.property('title');
-        expect(res.body.title).to.have.property('new fund');
+        expect(res.body.title).to.equal('new fund');
+        expect(res.body.goal).to.equal(100);
+        expect(res.body.raised).to.equal(0);
         done();
       })
 	})
