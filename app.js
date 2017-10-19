@@ -1,6 +1,5 @@
 var express = require('express');
 var path = require('path');
-var ejs_layout = require('ejs-layouts');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -15,13 +14,15 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var fund = require('./routes/fund');
 var app = express();
+var expressLayouts = require('express-ejs-layouts');
+var cors = require('cors');
 mongoose.connect('mongodb://alistair:cokelife@ds121965.mlab.com:21965/fund');
 mongoose.Promise = global.Promise;
 // view engine setup
+app.use(expressLayouts);
+app.use(cors());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(ejs_layout.express);
-
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -29,6 +30,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use('/', index);
 app.use('/users', users);
