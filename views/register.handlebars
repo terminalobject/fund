@@ -5,11 +5,11 @@
     <div class="col-md-6 roundformborder">
       <div class="container-fluid text-left">
         <h2 class="page-header">Register</h2>
-        <!-- {{#if errors}}
-        {{#each errors}}
-        <div class="alert alert-danger">{{msg}}</div>
-        {{/each}}
-        {{/if}} -->
+        {{#if errors}}
+          {{#each errors}}
+            <div class="alert alert-danger">{{msg}}</div>
+          {{/each}}
+        {{/if}}
         <form method="post" action="/users/register">
           <div class="form-group">
             <label>Name</label>
