@@ -6,7 +6,7 @@ body {
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 {
-      background-color: #1abc9c; /* Green */
+      background-color: #53BFA8; /* Green */
       color: #ffffff;
   }
   .bg-2 {
@@ -23,7 +23,7 @@ body {
   }
   .bg-5 {
       font: 20px PT Sans, sans-serif;
-      background-color: #FAF0E6; /* Black Gray */
+      background-color: #e6edea; /* Black Gray */
       color: #696969;
   }
   .roundformborder {
@@ -48,7 +48,7 @@ body {
       letter-spacing: 5px;
   }
   .navbar-nav  li a:hover {
-      color: #1abc9c !important;
+      color: #53BFA8 !important;
   }
   .footerflush {
     position: relative;
