@@ -47,7 +47,7 @@ describe('/fund/new', function() {
 	})
 })
 
-describe('/users/register', function() {
+describe('get /users/register', function() {
   it('register page', function(done) {
     chai.request(app)
       .get('/users/register')
@@ -58,6 +58,24 @@ describe('/users/register', function() {
       })
   });
 });
+
+describe('post /users/register', function() {
+	it('creates a new fund', function(done) {
+    chai.request(app)
+      .post('/users/register')
+      .send({
+        name: 'one',
+        email: 'testing@test1.com',
+        username: 'besttest',
+        password: 'test',
+        password2: 'test'
+      })
+      .end(function(err, res){
+        expect(res).to.have.status(200);
+        done();
+      })
+	})
+})
 
 describe('/users/login', function() {
   it('register page', function(done) {
