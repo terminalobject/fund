@@ -66,10 +66,6 @@ app.use(expressValidator({
 // Connect Flash
 app.use(flash());
 
-app.use('/', index);
-app.use('/users', users);
-app.use('/fund', fund);
-
 // Global Vars
 app.use(function (req, res, next) {
   res.locals.success_msg = req.flash('success_msg');
@@ -78,6 +74,11 @@ app.use(function (req, res, next) {
   res.locals.user = req.user || null;
   next();
 });
+
+
+app.use('/', index);
+app.use('/users', users);
+app.use('/fund', fund);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
